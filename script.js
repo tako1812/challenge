@@ -18,10 +18,16 @@ renderViewMorePets();
 
 console.log(returnedData);
 
+const clicked =[];
 cars.addEventListener("click", function (e) {
   document.querySelectorAll('[type="checkbox"]').forEach((item) => {
-    
-    returnedData[0].map(function(data) {
+    if (item.checked === true) {
+      clicked.push(item.dataset.inputData);
+    }
+});
+console.log(clicked);
+
+returnedData[0].map(function(data) {
       if(data.category === item.dataset.inputData) {
         console.log(111110);
         const html= `
@@ -36,9 +42,6 @@ cars.addEventListener("click", function (e) {
       }
     });
   });
-});
-
-
 
 
 
